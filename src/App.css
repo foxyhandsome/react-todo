@@ -1,38 +1,75 @@
 .App {
   text-align: center;
+  border: 2px solid black;
+  margin: 5%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.todo-list{
+  display: grid;
+  justify-items: center;
+  margin-top: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+input[type="text"] {
+  padding: 10px;
+  border: 2px solid black;
+  font-size: 15px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+
+
+.btnAdd{
+  background-color: aqua;
+  font-weight: bolder;
+  margin-left: 10px;
+  border: 2px solid black;
+  font-size: 15px;
+  width: auto;
+  height: 40px;
+}
+
+
+.todo-item{
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: 50px;
+  width: 90%;
+  border: 2px solid black;
+  margin-bottom: 10px ;
 }
 
-.App-link {
-  color: #61dafb;
+input[type="checkbox"] {
+  padding: 20px;
+  border: 2px solid black;
+  font-size: 15px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+.todo-item.completed {
+  background-color: lightgreen;
 }
+
+
+.trashicon{
+  border: 1px solid black;
+  padding:5px;
+  margin-right: 10px;
+}
+
+/* Style the custom checkbox */
+.todo-item input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
