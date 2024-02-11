@@ -1,0 +1,26 @@
+
+(***** npm install ก่อนนะครับ *****)
+หลังจากนั้นก็รันโปรเจคได้เลยครับ (npm start)
+
+-รายละเอียดงาน
+
+create To-do component:
+    •	checkbox for to-do
+    •	show the to-do text that user submitted
+    •	show the updatedAt timestamp
+    •	show Remove to-do button
+
+handle actions using state from React in the web app:
+    •	add a to-do (fill in the input and submit with clicking Add button)
+    •	checkbox for complete a to-do (can toggle from checked to unchecked)
+    •	remove a to-do
+
+sorting to-dos:
+    •	recently added to-do shows on the top of the stack
+    •	completed to-do goes to the bottom of the stack (oldest is in the end of the stack)
+
+Bonus points (optional)
+    • confirmation dialog before you delete to-do
+    • show warning dialog when user doesn't fill text in to the input box 
+   and try to click "Add" button
+    • Store in database (LocalStorage)
