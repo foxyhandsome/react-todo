@@ -4,19 +4,11 @@
   margin: 5%;
 }
 
-.todo-list{
-  display: grid;
-  justify-items: center;
-  margin-top: 10px;
-}
-
 input[type="text"] {
   padding: 10px;
   border: 2px solid black;
   font-size: 15px;
 }
-
-
 
 .btnAdd{
   background-color: aqua;
@@ -28,6 +20,37 @@ input[type="text"] {
   height: 40px;
 }
 
+.toggle-view{
+  display: flex;
+  justify-content: center;
+}
+
+.btnstackview{
+  padding: 5px;
+  margin-top: 10px;
+  border: 2px solid black;
+}
+
+.btnstackview.active {
+  background-color: yellow;
+}
+
+.btngridview{
+  padding: 5px;
+  margin-top: 10px;
+  margin-left: 10px;
+  border: 2px solid black;
+}
+
+.btngridview.active {
+  background-color: yellow;
+}
+
+.todo-list{
+  display: grid;
+  justify-items: center;
+  margin-top: 10px;
+}
 
 .todo-item{
   display: flex;
@@ -36,8 +59,9 @@ input[type="text"] {
   height: 50px;
   width: 90%;
   border: 2px solid black;
-  margin-bottom: 10px ;
+  margin-bottom: 10px;
 }
+
 
 .trashicon{
   border: 1px solid black;
@@ -55,6 +79,43 @@ input[type="text"] {
 .todo-item.completed {
   background-color: lightgreen;
 }
+
+.todo-list.grid {
+  grid-template-columns: repeat(auto-fill, minmax(40%, 1fr));
+  grid-gap: 20px;
+}
+
+
+.todo-list.grid .todo-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 150px;
+}
+
+.todo-list.grid .text {
+  margin-left: 10px; 
+}
+
+.todo-list.grid .date {
+  margin-left: 70%; 
+}
+
+.todo-list.grid .trashicon{
+  margin-left: 90%;
+  margin-bottom: 1%;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 

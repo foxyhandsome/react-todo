@@ -20,6 +20,7 @@ sorting to-dos:
     •	completed to-do goes to the bottom of the stack (oldest is in the end of the stack)
 
 Bonus points (optional)
+    • toggle view mode between stack view and grid view
     • confirmation dialog before you delete to-do
     • show warning dialog when user doesn't fill text in to the input box 
    and try to click "Add" button

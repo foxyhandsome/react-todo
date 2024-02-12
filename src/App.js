@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import { FaRegTrashAlt } from "react-icons/fa";
-
+import { MdGridView } from "react-icons/md";
+import { BsViewStacked } from "react-icons/bs";
 
 function App() {
   const [todos, setTodos] = useState(() => {
@@ -14,18 +15,20 @@ function App() {
   });
   const [todo, setTodo] = useState("");
   const [checkedItems, setCheckedItems] = useState({});
+  const [isGridView, setIsGridView] = useState(false); 
 
   useEffect(() => {
     localStorage.setItem("todolist", JSON.stringify(todos));
   }, [todos]);
 
   function handleInputChange(e) {
-    if (e.target.value.length <= 15) {
-      setTodo(e.target.value);
-    }else{
-      alert("กรอกข้อความเกินกำหนด (15 ตัว)")
-    }
-}
+    setTodo(e.target.value);
+    // if (e.target.value.length <= 15) {
+    //   setTodo(e.target.value);
+    // } else {
+    //   alert("กรอกข้อความเกินกำหนด (15 ตัว)")
+    // }
+  }
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -62,6 +65,14 @@ function App() {
     });
   }
 
+  function toggleStackView() {
+    setIsGridView(false);
+  }
+  
+  function toggleGridView() {
+    setIsGridView(true);
+  }
+
   function formatDate(timestamp) {
     const date = new Date(timestamp);
     const year = date.getFullYear();
@@ -87,9 +98,15 @@ function App() {
         <button className="btnAdd" onClick={handleSubmit}>Add</button>
       </div>
 
-      <div className="todo-list">
+      <div className="toggle-view">
+        <BsViewStacked className={!isGridView ? "btnstackview active" : "btnstackview"} onClick={toggleStackView} />
+        <MdGridView className={isGridView ? "btngridview active" : "btngridview"} onClick={toggleGridView} />
+      </div>
+
+      
+      <div className={!isGridView ? 'todo-list' : 'todo-list grid'}>
         {todos.map((todoItem) => (
-          <div key={todoItem.id} className={checkedItems[todoItem.id] ? 'todo-item completed' : 'todo-item'}>
+          <div key={todoItem.id} className={`todo-item ${checkedItems[todoItem.id] ? 'completed' : ''}`}>
             <input
               type="checkbox"
               checked={checkedItems[todoItem.id]}
@@ -97,8 +114,7 @@ function App() {
             />
             <span className="text">{todoItem.text}</span>
             <span className="date">{formatDate(todoItem.updatedAt)}</span>
-            <FaRegTrashAlt className="trashicon" style={{ backgroundColor: "pink" }} onClick={() => handleRemove(todoItem.id)}/>
-
+            <FaRegTrashAlt className="trashicon" style={{ backgroundColor: "pink" }} onClick={() => handleRemove(todoItem.id)} />
           </div>
         ))}
       </div>
