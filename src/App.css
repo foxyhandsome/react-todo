@@ -93,16 +93,14 @@ input[type="text"] {
   height: 150px;
 }
 
-.todo-list.grid .text {
+.todo-list.grid .text,
+.todo-list.grid .date {
   margin-left: 10px; 
 }
 
-.todo-list.grid .date {
-  margin-left: 70%; 
-}
 
 .todo-list.grid .trashicon{
-  margin-left: 90%;
+  margin-left: auto;
   margin-bottom: 1%;
 }
 
